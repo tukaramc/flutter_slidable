@@ -1,3 +1,5 @@
+//C:\flutter\.pub-cache\hosted\pub.dartlang.org\flutter_slidable-0.4.1\lib\src\widgets
+
 import 'package:flutter/material.dart';
 import 'package:flutter/widgets.dart';
 import 'package:flutter_slidable/src/widgets/slidable.dart';
@@ -106,6 +108,7 @@ class IconSlideAction extends ClosableSlideAction {
     Color color,
     VoidCallback onTap,
     bool closeOnTap = _kCloseOnTap,
+    this.iconColor
   })  : color = color ?? Colors.white,
         super(
           key: key,
@@ -116,6 +119,7 @@ class IconSlideAction extends ClosableSlideAction {
   final IconData icon;
 
   final String caption;
+  final Color iconColor;
 
   /// The background color.
   ///
@@ -146,10 +150,12 @@ class IconSlideAction extends ClosableSlideAction {
             new Flexible(
               child: new Icon(
                 icon,
-                color: foregroundColor,
+                color: iconColor,
               ),
             ),
             new Flexible(child: textWidget),
+           /*  new Container(margin: const EdgeInsets.only(top: 10.0),
+          height: 1.0,color: Color(0xFF394251),) */
           ],
         ),
       ),
