@@ -1,5 +1,6 @@
-import 'dart:async';
+//C:\flutter\.pub-cache\hosted\pub.dartlang.org\flutter_slidable-0.4.1\lib\src\widgets\slidable.dart
 
+import 'dart:async';
 import 'package:flutter/material.dart';
 import 'package:flutter/widgets.dart';
 
@@ -949,7 +950,8 @@ class SlidableState extends State<Slidable>
     final double delta = details.primaryDelta;
     _dragExtent += delta;
     setState(() {
-      _overallMoveController.value = _dragExtent.abs() / _overallDragAxisExtent;
+      ////////  Chetan /// When drag any action from left or right then it was dragging at the end
+      //_overallMoveController.value = _dragExtent.abs() / _overallDragAxisExtent;
       _actionsMoveController.value = _dragExtent.abs() / _actionsDragAxisExtent;
       _renderingMode = _overallMoveController.value > totalActionsExtent
           ? SlidableRenderingMode.dismiss
